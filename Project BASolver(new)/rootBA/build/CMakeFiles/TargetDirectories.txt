@@ -1,0 +1,4 @@
+/home/ctx/Project BASolver(new)/rootBA/build/CMakeFiles/rebuild_cache.dir
+/home/ctx/Project BASolver(new)/rootBA/build/CMakeFiles/edit_cache.dir
+/home/ctx/Project BASolver(new)/rootBA/build/CMakeFiles/benchmark_rootba.dir
+/home/ctx/Project BASolver(new)/rootBA/build/CMakeFiles/test_rootba.dir
