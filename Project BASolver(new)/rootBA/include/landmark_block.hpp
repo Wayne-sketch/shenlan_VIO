@@ -385,15 +385,17 @@ namespace rootBA {
             // 计算雅可比矩阵 d(相机坐标位置误差) / d(相机 6 自由度位姿)
 
            //  TODO: task 1 calculate jacobian
-
+//本部分自己最初的推导有问题，参考PDF推导！！！！！！！！！！！！！！！！！！！！！！！！！！！！1
             Eigen::Matrix<Scalar, 3, 6> tempJp = Eigen::Matrix<Scalar, 3, 6>::Zero();
             if (camera->IsFixed() == false) {
                 // tempJp.template block<3, 3>(0, 0) = ???;
                 //误差函数是预测量减去观测量，所以左三列为单位矩阵
-                tempJp.template block<3, 3>(0, 0) = Eigen::Matrix<Scalar, 3, 3>::Identity();
+                //错误的：tempJp.template block<3, 3>(0, 0) = Eigen::Matrix<Scalar, 3, 3>::Identity();
+                tempJp.template block<3, 3>(0, 0) = -R_cb * R_bw;
                 // tempJp.template block<3, 3>(0, 3) = ???;
                 //landmark的   负的相机坐标系坐标的反对称矩阵
-                tempJp.template block<3, 3>(0, 3) = SkewSymmetricMatrix(-p_c);
+                //错误的：tempJp.template block<3, 3>(0, 3) = SkewSymmetricMatrix(-p_c);
+                tempJp.template block<3, 3>(0, 3) = R_cb * SkewSymmetricMatrix(p_b);
             }
 
             // 计算雅可比矩阵 d(相机坐标位置误差) / d(特征点 3 自由度位置)
@@ -409,9 +411,11 @@ namespace rootBA {
             Eigen::Matrix<Scalar, 3, 6> tempJex = Eigen::Matrix<Scalar, 3, 6>::Zero();
             if (this->exPose->IsFixed() == false) {
                 // tempJex.template block<3, 3>(0, 0) = ???;
-                tempJex.template block<3, 3>(0, 0) = Eigen::Matrix<Scalar, 3, 3>::Identity();
+                //错误的：tempJex.template block<3, 3>(0, 0) = Eigen::Matrix<Scalar, 3, 3>::Identity();
+                tempJex.template block<3, 3>(0, 0) = -R_cb;
                 // tempJex.template block<3, 3>(0, 3) = ???;
-                tempJex.template block<3, 3>(0, 3) = SkewSymmetricMatrix(-p_b);
+                //错误的：tempJex.template block<3, 3>(0, 3) = SkewSymmetricMatrix(-p_b);
+                tempJex.template block<3, 3>(0, 3) = SkewSymmetricMatrix(p_c);
             }
             // Fill in above this line
 

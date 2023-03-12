@@ -82,10 +82,6 @@ benchmark_rootba: CMakeFiles/benchmark_rootba.dir/build.make
 benchmark_rootba: /usr/lib/x86_64-linux-gnu/libtbb.so
 benchmark_rootba: /usr/local/lib/libceres.a
 benchmark_rootba: /usr/lib/x86_64-linux-gnu/libglog.so
-benchmark_rootba: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
-benchmark_rootba: /usr/lib/x86_64-linux-gnu/liblapack.so
-benchmark_rootba: /usr/lib/x86_64-linux-gnu/libf77blas.so
-benchmark_rootba: /usr/lib/x86_64-linux-gnu/libatlas.so
 benchmark_rootba: CMakeFiles/benchmark_rootba.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/ctx/Project BASolver(new)/rootBA/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark_rootba"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark_rootba.dir/link.txt --verbose=$(VERBOSE)

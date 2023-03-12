@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS = -std=c++17 -O3 -O3 -DNDEBUG  
 
-CXX_DEFINES = -DGFLAGS_IS_A_DLL=0
+CXX_DEFINES = -DCERES_EXPORT_INTERNAL_SYMBOLS
 
-CXX_INCLUDES = -I"/home/ctx/Project BASolver(new)/rootBA" -I"/home/ctx/Project BASolver(new)/rootBA/include" -I"/home/ctx/Project BASolver(new)/rootBA/test" -I/usr/include/eigen3 
+CXX_INCLUDES = -I"/home/ctx/Project BASolver(new)/rootBA" -I"/home/ctx/Project BASolver(new)/rootBA/include" -I"/home/ctx/Project BASolver(new)/rootBA/test" -isystem /usr/include/eigen3 
 
