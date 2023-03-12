@@ -1,0 +1,2 @@
+code_utils:imu_utils:kalibr_allan/bagconvert:vio_data_simulation-ros_version
+-DCATKIN_DEVEL_PREFIX=/home/ctx/VIO_homework/HW2/devel -DCMAKE_INSTALL_PREFIX=/home/ctx/VIO_homework/HW2/install -G Unix Makefiles

@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/ctx/VIO_homework/HW2/devel/lib/libcv_utils.a  CMakeFiles/cv_utils.dir/src/cv_utils.cc.o
+/usr/bin/ranlib /home/ctx/VIO_homework/HW2/devel/lib/libcv_utils.a
